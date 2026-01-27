@@ -217,7 +217,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/products">
-              <Button size="xl" className="bg-white text-brand-green-600 hover:bg-white/90">
+              <Button size="xl" className="bg-white bg-none text-brand-green-600 hover:bg-white/90 border-none shadow-lg">
                 Browse Products
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

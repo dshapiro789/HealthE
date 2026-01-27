@@ -65,6 +65,43 @@ export default function HomePage() {
 
           {/* Grid Overlay */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+          {/* Grid Energy Beams */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Horizontal Beams */}
+            <motion.div
+              initial={{ left: '-10%' }}
+              animate={{ left: '110%' }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 0 }}
+              className="absolute top-[20%] h-[1px] w-[200px] bg-gradient-to-r from-transparent via-brand-green-500/50 to-transparent blur-[1px]"
+            />
+            <motion.div
+              initial={{ left: '-10%' }}
+              animate={{ left: '110%' }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear", delay: 4 }}
+              className="absolute top-[60%] h-[1px] w-[200px] bg-gradient-to-r from-transparent via-brand-blue-500/50 to-transparent blur-[1px]"
+            />
+            <motion.div
+              initial={{ left: '-10%' }}
+              animate={{ left: '110%' }}
+              transition={{ duration: 7, repeat: Infinity, ease: "linear", delay: 2 }}
+              className="absolute top-[80%] h-[1px] w-[300px] bg-gradient-to-r from-transparent via-brand-green-400/30 to-transparent blur-[1px]"
+            />
+
+            {/* Vertical Beams */}
+            <motion.div
+              initial={{ top: '-10%' }}
+              animate={{ top: '110%' }}
+              transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
+              className="absolute left-[30%] w-[1px] h-[200px] bg-gradient-to-b from-transparent via-brand-blue-400/30 to-transparent blur-[1px]"
+            />
+            <motion.div
+              initial={{ top: '-10%' }}
+              animate={{ top: '110%' }}
+              transition={{ duration: 9, repeat: Infinity, ease: "linear", delay: 3 }}
+              className="absolute right-[20%] w-[1px] h-[200px] bg-gradient-to-b from-transparent via-brand-green-500/30 to-transparent blur-[1px]"
+            />
+          </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -79,18 +116,21 @@ export default function HomePage() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-10 shadow-2xl"
+              className="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-xl border border-brand-green-500/30 rounded-full px-6 py-2 mb-10 shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.5)] transition-shadow duration-300"
             >
-              <Sparkles className="w-5 h-5 text-brand-green-400" />
-              <span className="text-base text-white/90 tracking-wide font-medium">The Future of Personal Wellness</span>
+              <span className="text-sm font-medium text-brand-green-100/90 tracking-wider uppercase">The Future of Personal Wellness</span>
             </motion.div>
 
             {/* Main Heading */}
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
               Wellness,
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-green-300 via-white to-brand-blue-300 drop-shadow-[0_0_30px_rgba(74,222,128,0.3)]">
+              <motion.span
+                animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-green-300 via-white to-brand-blue-300 bg-[length:200%_auto] drop-shadow-[0_0_30px_rgba(74,222,128,0.3)]"
+              >
                 Elevated.
-              </span>
+              </motion.span>
             </h1>
 
             {/* Subheading */}
