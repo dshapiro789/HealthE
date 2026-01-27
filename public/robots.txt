@@ -1,0 +1,11 @@
+# Health-E Marketplace Robots.txt
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Disallow API routes
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://healthe.com/sitemap.xml
