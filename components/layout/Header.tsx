@@ -237,24 +237,25 @@ export function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-border/50"
+            className="fixed inset-0 z-40 bg-white pt-24 px-4 pb-8 overflow-y-auto lg:hidden"
           >
-            <div className="container mx-auto px-4 py-6">
-              <div className="flex flex-col gap-4">
+            <div className="container mx-auto">
+              <div className="flex flex-col gap-6">
                 {navLinks.map((link) => (
-                  <div key={link.label}>
+                  <div key={link.label} className="border-b border-border/50 pb-4 last:border-0">
                     <Link
                       href={link.href}
                       className={cn(
-                        'block py-2 text-lg font-medium transition-colors',
+                        'block text-2xl font-heading font-bold mb-2 transition-colors',
                         pathname === link.href
                           ? 'text-brand-green-500'
-                          : 'text-foreground hover:text-brand-green-500'
+                          : 'text-slate-800 hover:text-brand-green-500'
                       )}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}
                     </Link>
