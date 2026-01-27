@@ -81,7 +81,7 @@ export function Footer() {
             <Link href="/" className="flex items-center mb-6">
               <div className="relative w-[240px] h-[100px]">
                 <Image
-                  src="/images/uploaded_media_1769485760854.png"
+                  src="/images/mainLogo.png"
                   alt="Health-E - Digital Wellness Solutions"
                   fill
                   className="object-contain position-left"

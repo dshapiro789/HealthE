@@ -107,7 +107,7 @@ export function Header() {
                 : "w-[280px] h-[112px] md:w-[320px] md:h-[128px]"
             )}>
               <Image
-                src="/images/uploaded_media_1769485760854.png"
+                src="/images/mainLogo.png"
                 alt="Health-E - Digital Wellness Solutions"
                 fill
                 className="object-contain drop-shadow-md"

@@ -139,7 +139,7 @@ export const products: Product[] = [
       displayText: '$299.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=800&fit=crop',
+      primary: '/images/products/define-stack.png',
       gallery: [],
       alt: 'REGENMD Define Stack peptide product',
     },

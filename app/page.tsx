@@ -212,7 +212,7 @@ export default function HomePage() {
                 key={product.id}
                 product={product}
                 index={index}
-                variant={index === 0 ? 'featured' : 'default'}
+                variant="default"
               />
             ))}
           </div>
