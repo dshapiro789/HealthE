@@ -79,7 +79,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-6">
-              <div className="relative w-[240px] h-[100px]">
+              <div className="relative w-[360px] h-[150px]">
                 <Image
                   src="/images/mainLogo.png"
                   alt="Health-E - Digital Wellness Solutions"

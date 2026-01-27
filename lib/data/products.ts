@@ -602,7 +602,7 @@ export const products: Product[] = [
       displayText: '$199.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&h=800&fit=crop',
+      primary: '/images/products/massage-gun.jpg',
       gallery: [],
       alt: 'RecoverMax Deep Tissue Massage Gun Pro',
     },
