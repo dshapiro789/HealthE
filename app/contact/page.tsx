@@ -45,7 +45,7 @@ const faqs = [
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
@@ -66,10 +66,10 @@ export default function ContactPage() {
        *   body: JSON.stringify(data),
        * });
        */
-      
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       setIsSubmitted(true);
       reset();
     } catch (error) {
@@ -82,7 +82,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-brand-green-500 to-brand-blue-500 py-16">
         <div className="container mx-auto px-4">
-          <Badge className="bg-white/20 text-white mb-4">Contact</Badge>
+          <Badge className="bg-white/90 text-brand-green-950 backdrop-blur-sm shadow-sm mb-4 hover:bg-white/100">Contact</Badge>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">
             Get in Touch
           </h1>
@@ -174,11 +174,10 @@ export default function ContactPage() {
                         {...register('message')}
                         rows={5}
                         placeholder="Tell us more about your inquiry..."
-                        className={`w-full px-4 py-3 rounded-lg border transition-colors resize-none ${
-                          errors.message 
-                            ? 'border-error focus:border-error focus:ring-error/20' 
+                        className={`w-full px-4 py-3 rounded-lg border transition-colors resize-none ${errors.message
+                            ? 'border-error focus:border-error focus:ring-error/20'
                             : 'border-border focus:border-brand-green-500 focus:ring-brand-green-500/20'
-                        } focus:outline-none focus:ring-2`}
+                          } focus:outline-none focus:ring-2`}
                       />
                       {errors.message && (
                         <p className="text-sm text-error mt-1">{errors.message.message}</p>
@@ -210,7 +209,7 @@ export default function ContactPage() {
                   <p className="text-foreground-muted text-sm mb-2">
                     For general inquiries and support
                   </p>
-                  <a 
+                  <a
                     href="mailto:hello@healthe.com"
                     className="text-brand-green-500 hover:text-brand-green-600 font-medium"
                   >
@@ -241,7 +240,7 @@ export default function ContactPage() {
               </h2>
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="bg-white rounded-xl p-6 shadow-card"
                   >

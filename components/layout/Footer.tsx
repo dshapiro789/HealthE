@@ -14,10 +14,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
   Youtube,
   Mail,
   ArrowRight
@@ -78,23 +78,22 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="relative w-12 h-12">
+            <Link href="/" className="flex items-center mb-6">
+              <div className="relative w-[140px] h-[58px]">
                 <Image
-                  src="/images/logo.png"
-                  alt="Health-E"
+                  src="/images/uploaded_media_1769485760854.png"
+                  alt="Health-E - Digital Wellness Solutions"
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="font-heading text-2xl font-bold">Health-E</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
-              Your trusted destination for premium health and wellness products. 
-              We curate the best products from leading brands to help you achieve 
+              Your trusted destination for premium health and wellness products.
+              We curate the best products from leading brands to help you achieve
               your wellness goals.
             </p>
-            
+
             {/* Newsletter Signup */}
             <div className="mb-6">
               <h4 className="font-heading font-semibold mb-3">Stay Updated</h4>
@@ -183,7 +182,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            
+
             {/* Contact */}
             <div className="mt-6">
               <h4 className="font-heading font-semibold mb-3">Contact</h4>
@@ -207,7 +206,7 @@ export function Footer() {
               © {currentYear} Health-E Digital Wellness Solutions. All rights reserved.
             </p>
             <p className="text-xs text-gray-500 text-center md:text-right max-w-md">
-              Health-E is an affiliate marketplace. We may earn commissions from 
+              Health-E is an affiliate marketplace. We may earn commissions from
               purchases made through links on this site at no extra cost to you.
             </p>
           </div>

@@ -93,7 +93,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       {/* Category Hero */}
       <div className="bg-gradient-to-br from-brand-green-500 to-brand-blue-500 py-16">
         <div className="container mx-auto px-4">
-          <Badge className="bg-white/20 text-white mb-4">Category</Badge>
+          <Badge className="bg-white/90 text-brand-green-950 backdrop-blur-sm shadow-sm mb-4 hover:bg-white/100">Category</Badge>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4 capitalize">
             {category.name}
           </h1>
@@ -148,7 +148,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     isSortOpen && 'rotate-180'
                   )} />
                 </Button>
-                
+
                 {isSortOpen && (
                   <>
                     <div className="fixed inset-0 z-10" onClick={() => setIsSortOpen(false)} />
@@ -186,10 +186,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           <div className="absolute inset-0 bg-black/50" onClick={() => setIsMobileFilterOpen(false)} />
           <div className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white overflow-y-auto">
             <div className="p-6">
-              <ProductFilter 
+              <ProductFilter
                 selectedCategory={params.category}
-                isMobile 
-                onClose={() => setIsMobileFilterOpen(false)} 
+                isMobile
+                onClose={() => setIsMobileFilterOpen(false)}
               />
             </div>
           </div>

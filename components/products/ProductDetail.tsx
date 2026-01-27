@@ -16,10 +16,10 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  ExternalLink, 
-  ChevronRight, 
-  Shield, 
+import {
+  ExternalLink,
+  ChevronRight,
+  Shield,
   Truck,
   CheckCircle,
   Share2,
@@ -58,34 +58,20 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Breadcrumb */}
-      <div className="bg-white border-b border-border/50">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-foreground-muted hover:text-brand-green-500 transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="w-4 h-4 text-foreground-muted" />
-            <Link href="/products" className="text-foreground-muted hover:text-brand-green-500 transition-colors">
-              Products
-            </Link>
-            <ChevronRight className="w-4 h-4 text-foreground-muted" />
-            <Link 
-              href={`/products/category/${product.category}`}
-              className="text-foreground-muted hover:text-brand-green-500 transition-colors capitalize"
-            >
-              {product.category.replace('-', ' ')}
-            </Link>
-            <ChevronRight className="w-4 h-4 text-foreground-muted" />
-            <span className="text-foreground font-medium truncate max-w-[200px]">
-              {product.name}
-            </span>
-          </nav>
-        </div>
-      </div>
+
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8 lg:py-12">
+        {/* Back Button */}
+        <div className="mb-6">
+          <Link href="/products">
+            <Button variant="ghost" className="pl-0 hover:bg-transparent hover:text-brand-green-500 group">
+              <ChevronRight className="w-5 h-5 mr-1 rotate-180 transition-transform group-hover:-translate-x-1" />
+              Back to Products
+            </Button>
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Image Column */}
           <motion.div
@@ -102,9 +88,9 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 className="object-cover"
                 priority
               />
-              
+
               {/* Badges */}
-              <div className="absolute top-6 left-6 flex flex-col gap-2">
+              <div className="absolute top-6 left-6 flex flex-col items-start gap-2">
                 {product.metadata.isNew && (
                   <Badge variant="new" className="text-sm px-4 py-1.5">New</Badge>
                 )}
@@ -130,7 +116,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             className="flex flex-col"
           >
             {/* Brand */}
-            <Link 
+            <Link
               href={`/products?brand=${encodeURIComponent(product.brand.name)}`}
               className="text-sm font-semibold text-brand-green-500 uppercase tracking-wider hover:text-brand-green-600 transition-colors"
             >
@@ -272,7 +258,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                   </div>
                 ) : (
                   <p className="text-foreground-muted">
-                    Ingredient information is available on the product page. 
+                    Ingredient information is available on the product page.
                     Click the button above to view full details.
                   </p>
                 )}
@@ -294,7 +280,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                   </div>
                 ) : (
                   <p className="text-foreground-muted">
-                    Usage instructions are available on the product page. 
+                    Usage instructions are available on the product page.
                     Click the button above to view full details.
                   </p>
                 )}

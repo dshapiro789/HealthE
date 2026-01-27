@@ -48,12 +48,13 @@ export function ProductCard({ product, index = 0, variant = 'default' }: Product
       )}
     >
       {/* Image Container */}
-      <Link 
+      <Link
         href={`/products/${product.slug}`}
         className={cn(
           'block relative overflow-hidden bg-gradient-to-br from-background-secondary to-white',
           isFeatured ? 'md:w-2/5' : 'w-full',
-          isCompact ? 'aspect-[4/3]' : 'aspect-square'
+          isCompact ? 'aspect-[4/3]' : 'aspect-square',
+          'min-h-[180px]'
         )}
       >
         <Image
@@ -63,9 +64,9 @@ export function ProductCard({ product, index = 0, variant = 'default' }: Product
           sizes={isFeatured ? '(max-width: 768px) 100vw, 40vw' : '(max-width: 768px) 100vw, 25vw'}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        
+
         {/* Badges */}
-        <div className="absolute top-4 left-4 flex flex-col gap-2">
+        <div className="absolute top-4 left-4 flex flex-col items-start gap-2">
           {product.metadata.isNew && (
             <Badge variant="new">New</Badge>
           )}
@@ -135,7 +136,7 @@ export function ProductCard({ product, index = 0, variant = 'default' }: Product
           </div>
 
           <Link href={`/products/${product.slug}`}>
-            <Button 
+            <Button
               size={isFeatured ? 'default' : 'sm'}
               className="group/btn"
             >

@@ -36,7 +36,7 @@ export default function ProductsPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<SortOption>('newest');
   const [isSortOpen, setIsSortOpen] = useState(false);
-  
+
   const allProducts = getAllProducts();
   const categories = getCategoriesWithCounts();
 
@@ -98,12 +98,12 @@ export default function ProductsPage() {
       {/* Page Header */}
       <div className="bg-gradient-to-br from-brand-green-500 to-brand-blue-500 py-16">
         <div className="container mx-auto px-4">
-          <Badge className="bg-white/20 text-white mb-4">Marketplace</Badge>
+          <Badge className="bg-white/90 text-brand-green-950 backdrop-blur-sm shadow-sm mb-4 hover:bg-white/100">Marketplace</Badge>
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">
             All Products
           </h1>
           <p className="text-white/80 max-w-2xl text-lg">
-            Browse our complete collection of premium health and wellness products 
+            Browse our complete collection of premium health and wellness products
             from trusted brands.
           </p>
         </div>
@@ -158,12 +158,12 @@ export default function ProductsPage() {
                       isSortOpen && 'rotate-180'
                     )} />
                   </Button>
-                  
+
                   {isSortOpen && (
                     <>
-                      <div 
-                        className="fixed inset-0 z-10" 
-                        onClick={() => setIsSortOpen(false)} 
+                      <div
+                        className="fixed inset-0 z-10"
+                        onClick={() => setIsSortOpen(false)}
                       />
                       <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-border/50 py-2 z-20">
                         {sortOptions.map((option) => (
@@ -211,8 +211,8 @@ export default function ProductsPage() {
             </div>
 
             {/* Products Grid */}
-            <ProductGrid 
-              products={filteredProducts} 
+            <ProductGrid
+              products={filteredProducts}
               columns={viewMode === 'list' ? 2 : 4}
             />
           </div>
@@ -222,15 +222,15 @@ export default function ProductsPage() {
       {/* Mobile Filter Sheet */}
       {isMobileFilterOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div 
-            className="absolute inset-0 bg-black/50" 
-            onClick={() => setIsMobileFilterOpen(false)} 
+          <div
+            className="absolute inset-0 bg-black/50"
+            onClick={() => setIsMobileFilterOpen(false)}
           />
           <div className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white overflow-y-auto">
             <div className="p-6">
-              <ProductFilter 
-                isMobile 
-                onClose={() => setIsMobileFilterOpen(false)} 
+              <ProductFilter
+                isMobile
+                onClose={() => setIsMobileFilterOpen(false)}
               />
             </div>
           </div>

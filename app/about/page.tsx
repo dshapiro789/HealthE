@@ -48,16 +48,16 @@ export default function AboutPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <Badge className="bg-white/20 text-white mb-6">About Us</Badge>
+            <Badge className="bg-white/90 text-brand-green-950 backdrop-blur-sm shadow-sm mb-6 hover:bg-white/100">About Us</Badge>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Empowering Your Wellness Journey
             </h1>
             <p className="text-xl text-white/80 leading-relaxed">
-              Health-E is your trusted destination for discovering premium health and wellness 
-              products from the world&apos;s most innovative brands. We believe everyone deserves 
+              Health-E is your trusted destination for discovering premium health and wellness
+              products from the world&apos;s most innovative brands. We believe everyone deserves
               access to the best wellness solutions available.
             </p>
           </div>
@@ -74,13 +74,13 @@ export default function AboutPage() {
                 Making Wellness Accessible to Everyone
               </h2>
               <p className="text-lg text-foreground-muted mb-6 leading-relaxed">
-                In a market flooded with wellness products, finding quality can be overwhelming. 
-                That&apos;s why we created Health-E — a curated marketplace where every product 
+                In a market flooded with wellness products, finding quality can be overwhelming.
+                That&apos;s why we created Health-E — a curated marketplace where every product
                 has been vetted by our team of wellness experts.
               </p>
               <p className="text-lg text-foreground-muted mb-8 leading-relaxed">
-                We partner with leading brands in supplements, peptides, wellness technology, 
-                and more to bring you products that actually work. Our commitment is to your 
+                We partner with leading brands in supplements, peptides, wellness technology,
+                and more to bring you products that actually work. Our commitment is to your
                 health, not just sales.
               </p>
               <Link href="/products">
@@ -90,13 +90,13 @@ export default function AboutPage() {
                 </Button>
               </Link>
             </div>
-            
+
             <div className="relative">
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-brand-green-100 to-brand-blue-100 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-32 h-32">
+                  <div className="relative w-48 h-48">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/uploaded_media_1769485760854.png"
                       alt="Health-E Logo"
                       fill
                       className="object-contain"
@@ -121,7 +121,7 @@ export default function AboutPage() {
               What Drives Us
             </h2>
             <p className="text-lg text-foreground-muted max-w-2xl mx-auto">
-              Our core values guide every decision we make, from the products we feature 
+              Our core values guide every decision we make, from the products we feature
               to the way we communicate with our community.
             </p>
           </div>
@@ -130,7 +130,7 @@ export default function AboutPage() {
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <div 
+                <div
                   key={index}
                   className="bg-white p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
                 >
@@ -184,7 +184,7 @@ export default function AboutPage() {
                   description: 'We establish relationships only with brands that share our commitment to quality and customer satisfaction.',
                 },
               ].map((item, index) => (
-                <div 
+                <div
                   key={index}
                   className="flex gap-6 items-start"
                 >

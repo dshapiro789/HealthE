@@ -295,7 +295,7 @@ export const products: Product[] = [
       displayText: '$29.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1550572017-edd951aa8f72?w=800&h=800&fit=crop',
+      primary: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=800&fit=crop',
       gallery: [],
       alt: 'VitalBlend Vitamin D3 + K2 supplement',
     },
@@ -704,7 +704,7 @@ export function getCategoryBySlug(slug: string): Category | undefined {
 export function searchProducts(query: string): Product[] {
   const searchTerm = query.toLowerCase().trim();
   if (!searchTerm) return [];
-  
+
   return products.filter(product => {
     const searchableText = [
       product.name,
@@ -713,7 +713,7 @@ export function searchProducts(query: string): Product[] {
       product.brand.name,
       ...product.tags,
     ].join(' ').toLowerCase();
-    
+
     return searchableText.includes(searchTerm);
   });
 }
@@ -733,9 +733,9 @@ export function getPriceRange(): { min: number; max: number } {
   const prices = products
     .filter(p => p.price.amount !== undefined)
     .map(p => p.price.amount as number);
-  
+
   if (prices.length === 0) return { min: 0, max: 1000 };
-  
+
   return {
     min: Math.min(...prices),
     max: Math.max(...prices),

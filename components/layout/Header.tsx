@@ -16,10 +16,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Search, 
-  Menu, 
-  X, 
+import {
+  Search,
+  Menu,
+  X,
   ChevronDown,
   Pill,
   Dna,
@@ -38,8 +38,8 @@ import { cn } from '@/lib/utils';
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
-  { 
-    label: 'Categories', 
+  {
+    label: 'Categories',
     href: '/products',
     hasDropdown: true,
     dropdownItems: [
@@ -70,6 +70,10 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Force "scrolled" state on non-home pages to ensure visibility
+  const isHome = pathname === '/';
+  const showGlassHeader = isScrolled || !isHome;
+
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -78,31 +82,38 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md py-3'
-          : 'bg-transparent py-5'
+        'fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out',
+        showGlassHeader
+          ? 'top-4'
+          : 'top-0'
       )}
     >
-      <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between">
+      <div className={cn(
+        "container mx-auto px-4 transition-all duration-500",
+        showGlassHeader ? "max-w-6xl" : "max-w-full"
+      )}>
+        <nav className={cn(
+          "flex items-center justify-between transition-all duration-500 rounded-2xl",
+          showGlassHeader
+            ? "bg-white/80 backdrop-blur-xl shadow-2xl border border-white/40 py-3 px-6"
+            : "bg-transparent py-8"
+        )}>
           {/* Logo */}
-          <Link href="/" className="relative z-10 flex items-center gap-3">
-            <div className="relative w-10 h-10 md:w-12 md:h-12">
+          <Link href="/" className="relative z-10 flex items-center group shrink-0">
+            <div className={cn(
+              "relative transition-all duration-500 ease-in-out shrink-0",
+              showGlassHeader
+                ? "w-[180px] h-[72px]"
+                : "w-[280px] h-[112px] md:w-[320px] md:h-[128px]"
+            )}>
               <Image
-                src="/images/logo.png"
-                alt="Health-E"
+                src="/images/uploaded_media_1769485760854.png"
+                alt="Health-E - Digital Wellness Solutions"
                 fill
-                className="object-contain"
+                className="object-contain drop-shadow-md"
                 priority
               />
             </div>
-            <span className={cn(
-              'font-heading text-xl md:text-2xl font-bold transition-colors',
-              isScrolled ? 'text-foreground' : 'text-white'
-            )}>
-              Health-E
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -117,12 +128,15 @@ export function Header() {
                 <Link
                   href={link.href}
                   className={cn(
-                    'flex items-center gap-1 text-sm font-medium transition-colors hover:text-brand-green-500',
+                    'flex items-center gap-1 font-medium transition-colors hover:text-brand-green-500',
+                    showGlassHeader ? 'text-base' : 'text-lg',
                     pathname === link.href
-                      ? 'text-brand-green-500'
-                      : isScrolled
-                        ? 'text-foreground'
-                        : 'text-white'
+                      ? showGlassHeader
+                        ? 'text-brand-green-600 font-bold'
+                        : 'text-white font-bold underline underline-offset-8 decoration-2 decoration-brand-blue-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
+                      : showGlassHeader
+                        ? 'text-slate-700'
+                        : 'text-white/95 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
                   )}
                 >
                   {link.label}
@@ -176,8 +190,10 @@ export function Header() {
                 variant="ghost"
                 size="icon"
                 className={cn(
-                  'transition-colors',
-                  isScrolled ? 'text-foreground' : 'text-white hover:bg-white/10'
+                  'transition-colors rounded-full',
+                  showGlassHeader
+                    ? 'text-slate-700 hover:bg-slate-100'
+                    : 'text-white hover:bg-white/20 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
                 )}
               >
                 <Search className="w-5 h-5" />
@@ -186,7 +202,15 @@ export function Header() {
 
             {/* CTA Button - Desktop */}
             <Link href="/products" className="hidden md:block">
-              <Button>
+              <Button
+                variant={showGlassHeader ? "default" : "secondary"}
+                className={cn(
+                  "font-bold transition-all shadow-lg hover:shadow-xl hover:scale-105 border-0",
+                  showGlassHeader
+                    ? "bg-brand-green-600 hover:bg-brand-green-700" // Normal Green Button
+                    : "bg-white text-brand-green-700 hover:bg-white/90" // White Button
+                )}
+              >
                 Explore Products
               </Button>
             </Link>
@@ -196,8 +220,10 @@ export function Header() {
               variant="ghost"
               size="icon"
               className={cn(
-                'lg:hidden transition-colors',
-                isScrolled ? 'text-foreground' : 'text-white hover:bg-white/10'
+                'lg:hidden transition-colors rounded-full',
+                showGlassHeader
+                  ? 'text-slate-700 hover:bg-slate-100'
+                  : 'text-white hover:bg-white/20 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'
               )}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
