@@ -239,11 +239,3 @@ function ProductsContent() {
     </div>
   );
 }
-
-export default function ProductsPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen pt-24"><div className="container mx-auto px-4">Loading products...</div></div>}>
-      <ProductsContent />
-    </Suspense>
-  );
-}
