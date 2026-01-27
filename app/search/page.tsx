@@ -11,7 +11,7 @@
 
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Search, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -22,12 +22,12 @@ import { searchProducts, getCategoriesWithCounts } from '@/lib/data/products';
 import { trackSearch } from '@/lib/utils/tracking';
 import Link from 'next/link';
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialQuery = searchParams.get('q') || '';
   const [searchInput, setSearchInput] = useState(initialQuery);
-  
+
   const results = useMemo(() => {
     if (!initialQuery.trim()) return [];
     return searchProducts(initialQuery);
@@ -62,7 +62,7 @@ export default function SearchPage() {
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
             Search Products
           </h1>
-          
+
           {/* Search Form */}
           <form onSubmit={handleSearch} className="max-w-2xl">
             <div className="relative">
@@ -83,8 +83,8 @@ export default function SearchPage() {
                   <X className="w-5 h-5" />
                 </button>
               )}
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="absolute right-2 top-1/2 -translate-y-1/2"
               >
                 Search
@@ -128,7 +128,7 @@ export default function SearchPage() {
                   <p className="text-foreground-muted mb-8">
                     Try adjusting your search terms or browse our categories below.
                   </p>
-                  
+
                   {/* Category Suggestions */}
                   <div className="flex flex-wrap justify-center gap-3">
                     {categories.map((cat) => (
@@ -156,12 +156,12 @@ export default function SearchPage() {
               <p className="text-foreground-muted mb-8">
                 Enter a search term above or browse by category below.
               </p>
-              
+
               {/* Category Cards */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {categories.map((cat) => (
-                  <Link 
-                    key={cat.id} 
+                  <Link
+                    key={cat.id}
                     href={`/products/category/${cat.slug}`}
                     className="p-6 bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
                   >
@@ -179,5 +179,13 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen pt-24"><div className="container mx-auto px-4">Loading search...</div></div>}>
+      <SearchContent />
+    </Suspense>
   );
 }
