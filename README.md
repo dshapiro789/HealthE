@@ -2,7 +2,7 @@
 
 A modern, affiliate-based marketplace for health and wellness products built with Next.js 14, TypeScript, and Tailwind CSS.
 
-![Health-E Logo](public/images/logo.png)
+![Health-E Logo](public/images/mainLogo.png)
 
 ## 🚀 Features
 
