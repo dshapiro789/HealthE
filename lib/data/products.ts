@@ -194,7 +194,7 @@ export const products: Product[] = [
       displayText: '$349.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=800&fit=crop',
+      primary: '/images/products/vitality-stack.jpg',
       gallery: [],
       alt: 'REGENMD Vitality Stack peptide product',
     },
@@ -246,7 +246,7 @@ export const products: Product[] = [
       displayText: '$34.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=800&fit=crop',
+      primary: '/images/products/omega-3-complex.jpg',
       gallery: [],
       alt: 'NutriCore Premium Omega-3 Complex supplement bottle',
     },
@@ -295,7 +295,7 @@ export const products: Product[] = [
       displayText: '$29.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&h=800&fit=crop',
+      primary: '/images/products/vitamin-d3-k2.jpg',
       gallery: [],
       alt: 'VitalBlend Vitamin D3 + K2 supplement',
     },
@@ -344,7 +344,7 @@ export const products: Product[] = [
       displayText: '$39.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=800&h=800&fit=crop',
+      primary: '/images/products/magnesium-glycinate.jpg',
       gallery: [],
       alt: 'PureForm Magnesium Glycinate Elite supplement',
     },
@@ -397,7 +397,7 @@ export const products: Product[] = [
       displayText: '$89.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&h=800&fit=crop',
+      primary: '/images/products/smart-scale.jpg',
       gallery: [],
       alt: 'TechFit Smart Body Composition Scale',
     },
@@ -445,7 +445,7 @@ export const products: Product[] = [
       displayText: '$599.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=800&fit=crop',
+      primary: '/images/products/red-light-panel.jpg',
       gallery: [],
       alt: 'LumiHealth Professional Red Light Therapy Panel',
     },
@@ -497,7 +497,7 @@ export const products: Product[] = [
       displayText: '$49.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=800&h=800&fit=crop',
+      primary: '/images/products/resistance-bands.jpg',
       gallery: [],
       alt: 'FlexFit Premium Resistance Bands Set',
     },
@@ -549,7 +549,7 @@ export const products: Product[] = [
       displayText: '$54.99',
     },
     images: {
-      primary: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=800&h=800&fit=crop',
+      primary: '/images/products/grass-fed-whey.jpg',
       gallery: [],
       alt: 'CleanProtein Grass-Fed Whey Protein Isolate',
     },
