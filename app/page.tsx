@@ -54,54 +54,25 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
-        {/* Deep Aurora Background */}
-        <div className="absolute inset-0 bg-slate-900">
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-green-900/40 via-slate-900 to-slate-900 z-0" />
+        {/* Dynamic Image Background */}
+        <div className="absolute inset-0 z-0 bg-slate-900">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="Hero Background"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority
+            quality={100}
+          />
+          
+          {/* Top and Bottom Gradients for smooth blending, leaving the center clear */}
+          <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-background/90 to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-slate-950/10 z-10 pointer-events-none" />
 
-          {/* Animated Blobs */}
-          <div className="absolute top-0 -left-4 w-96 h-96 bg-brand-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-          <div className="absolute top-0 -right-4 w-96 h-96 bg-brand-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
-          <div className="absolute -bottom-32 left-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
-
-          {/* Grid Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-          {/* Grid Energy Beams */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {/* Horizontal Beams */}
-            <motion.div
-              initial={{ left: '-10%' }}
-              animate={{ left: '110%' }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 0 }}
-              className="absolute top-[20%] h-[1px] w-[200px] bg-gradient-to-r from-transparent via-brand-green-500/50 to-transparent blur-[1px]"
-            />
-            <motion.div
-              initial={{ left: '-10%' }}
-              animate={{ left: '110%' }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear", delay: 4 }}
-              className="absolute top-[60%] h-[1px] w-[200px] bg-gradient-to-r from-transparent via-brand-blue-500/50 to-transparent blur-[1px]"
-            />
-            <motion.div
-              initial={{ left: '-10%' }}
-              animate={{ left: '110%' }}
-              transition={{ duration: 7, repeat: Infinity, ease: "linear", delay: 2 }}
-              className="absolute top-[80%] h-[1px] w-[300px] bg-gradient-to-r from-transparent via-brand-green-400/30 to-transparent blur-[1px]"
-            />
-
-            {/* Vertical Beams */}
-            <motion.div
-              initial={{ top: '-10%' }}
-              animate={{ top: '110%' }}
-              transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
-              className="absolute left-[30%] w-[1px] h-[200px] bg-gradient-to-b from-transparent via-brand-blue-400/30 to-transparent blur-[1px]"
-            />
-            <motion.div
-              initial={{ top: '-10%' }}
-              animate={{ top: '110%' }}
-              transition={{ duration: 9, repeat: Infinity, ease: "linear", delay: 3 }}
-              className="absolute right-[20%] w-[1px] h-[200px] bg-gradient-to-b from-transparent via-brand-green-500/30 to-transparent blur-[1px]"
-            />
-          </div>
+          {/* Subtle Grid Overlay */}
+          <div className="absolute inset-0 z-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -116,21 +87,17 @@ export default function HomePage() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-xl border border-brand-green-500/30 rounded-full px-6 py-2 mb-10 shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.5)] transition-shadow duration-300"
+              className="inline-flex items-center gap-2 bg-[#0f172a] rounded-full px-6 py-2.5 mb-10 shadow-lg"
             >
-              <span className="text-sm font-medium text-brand-green-100/90 tracking-wider uppercase">The Future of Personal Wellness</span>
+              <span className="text-xs font-semibold text-[#cbd5e1] tracking-[0.15em] uppercase">The Future of Personal Wellness</span>
             </motion.div>
 
             {/* Main Heading */}
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
               Wellness,
-              <motion.span
-                animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-green-300 via-white to-brand-blue-300 bg-[length:200%_auto] drop-shadow-[0_0_30px_rgba(74,222,128,0.3)]"
-              >
+              <span className="block text-[#cae4d3]">
                 Elevated.
-              </motion.span>
+              </span>
             </h1>
 
             {/* Subheading */}
@@ -140,18 +107,18 @@ export default function HomePage() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/products">
-                <Button size="xl" className="h-14 px-8 text-lg bg-brand-green-500 hover:bg-brand-green-400 text-white border-0 shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] hover:scale-105 transition-all duration-300 rounded-full font-bold">
+                <Button size="xl" className="h-14 px-8 text-lg bg-gradient-to-r from-[#60bba3] to-[#4fa2ce] hover:opacity-90 text-white border-0 rounded-full font-semibold transition-opacity duration-300">
                   Start Your Journey
-                  <ArrowRight className="w-6 h-6 ml-2" />
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link href="/about">
                 <Button
                   size="xl"
                   variant="outline"
-                  className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:border-white/40 rounded-full font-medium backdrop-blur-sm"
+                  className="h-14 px-8 text-lg bg-[#0f172a] border-0 text-white hover:bg-[#1e293b] rounded-full font-semibold transition-colors duration-300"
                 >
                   Our Philosophy
                 </Button>
@@ -178,9 +145,9 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 text-white/30 text-sm font-medium tracking-widest uppercase animate-pulse">
+          <div className="flex flex-col items-center gap-2 text-white/90 drop-shadow-md text-sm font-semibold tracking-[0.2em] uppercase animate-pulse">
             <span>Scroll</span>
-            <ChevronDown className="w-5 h-5 animate-bounce" />
+            <ChevronDown className="w-6 h-6 animate-bounce" />
           </div>
         </div>
       </section>
